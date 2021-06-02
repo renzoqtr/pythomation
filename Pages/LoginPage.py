@@ -16,11 +16,14 @@ class LoginPage(BasePage):
     def open_login_page(self):
         self.driver.get(TestConfig.LOGIN_URL)
 
-    def do_login(self, username, password):
+    def write_on_username_field(self, username):
         self.write_on_field(self.USER_FIELD, username)
+
+    def write_on_password_field(self, password):
         self.write_on_field(self.PASSWORD_FIELD, password)
+
+    def click_on_login_button(self):
         self.click_on(self.LOGIN_BUTTON)
-        return self.driver
 
     def get_alert_text(self):
         return self.get_text_from(self.ALERT_MSS)

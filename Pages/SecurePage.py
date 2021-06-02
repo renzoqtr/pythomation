@@ -12,7 +12,6 @@ class SecurePage(BasePage):
 
     def do_logout(self):
         self.click_on(self.LOGOUT_BUTTON)
-        return self.driver
 
     def get_message_text(self):
         return self.get_text_from(self.MESSAGE_ELEMENT)
