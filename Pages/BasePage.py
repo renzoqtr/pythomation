@@ -29,3 +29,7 @@ class BasePage:
         return WebDriverWait(self.driver, self.MAX_WAIT_TIMEOUT) \
             .until(exc.visibility_of_element_located(by_locator)) \
             .text
+
+    def get_elements(self, by_locator):
+        return WebDriverWait(self.driver, self.MAX_WAIT_TIMEOUT)\
+            .until(exc.visibility_of_all_elements_located(by_locator))

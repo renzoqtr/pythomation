@@ -2,7 +2,9 @@ class TestConfig:
     CHROME_DRIVER_PATH = "C:/chromedriver/chromedriver.exe"
 
     LOGIN_URL = "https://the-internet.herokuapp.com/login"
-    CSV_USER_EMAIl = "TestData/emails.csv"
+    DATA_TABLE_URL = "https://the-internet.herokuapp.com/tables"
+    CSV_CUSTOMERS = "TestData/DataTables.csv"
+    CSV_DELIMITER = ';'
 
     USER_NAME = "tomsmith"
     USER_PASSWORD = "SuperSecretPassword!"
