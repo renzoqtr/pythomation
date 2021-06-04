@@ -1,17 +1,17 @@
 from selenium.webdriver.common.by import By
 
-from Config.config import TestConfig
 from Pages.BasePage import BasePage
 
 
 class DataTablesPage(BasePage):
+    DATA_TABLE_URL = "https://the-internet.herokuapp.com/tables"
     FIRST_TABLE_ROWS = (By.CSS_SELECTOR, '#table1 > tbody > tr')
 
     def __init__(self, driver):
         super().__init__(driver)
 
     def open_data_table_page(self):
-        self.driver.get(TestConfig.DATA_TABLE_URL)
+        self.driver.get(self.DATA_TABLE_URL)
 
     def get_first_table_text(self):
         text_table = []

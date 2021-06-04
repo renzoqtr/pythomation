@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
-from Config.config import TestConfig
 from Pages.BasePage import BasePage
 
 
 class LoginPage(BasePage):
+    LOGIN_URL = "https://the-internet.herokuapp.com/login"
     USER_FIELD = (By.ID, "username")
     PASSWORD_FIELD = (By.ID, "password")
     LOGIN_BUTTON = (By.XPATH, "//button[contains(., 'Login')]")
@@ -14,7 +14,7 @@ class LoginPage(BasePage):
         super().__init__(driver)
 
     def open_login_page(self):
-        self.driver.get(TestConfig.LOGIN_URL)
+        self.driver.get(self.LOGIN_URL)
 
     def write_on_username_field(self, username):
         self.write_on_field(self.USER_FIELD, username)

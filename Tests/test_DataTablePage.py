@@ -1,13 +1,13 @@
-from Tests.test_base import BaseTest
 from Pages.DataTablesPage import DataTablesPage
-from Config.config import TestConfig
+from TestData.tables_test_data import TablesTestData
+from Tests.test_base import BaseTest
 from Utilities.csv_reader import CsvFileReader
 
 
 class TestDataTables(BaseTest):
 
     def test_data_table_content(self):
-        test_data = CsvFileReader.read_csv(TestConfig.CSV_CUSTOMERS)
+        test_data = CsvFileReader.read_csv(TablesTestData.CSV_CUSTOMERS, TablesTestData.CSV_DELIMITER)
         self.dataTablePage = DataTablesPage(self.driver)
         self.dataTablePage.open_data_table_page()
         table_as_text = self.dataTablePage.get_first_table_text()
