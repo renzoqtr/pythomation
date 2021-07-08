@@ -1,2 +1,6 @@
-class TestConfig:
-    CHROME_DRIVER_PATH = "C:/chromedriver/chromedriver.exe"
+import os
+
+
+def get_chromedriver_path():
+    stream = os.popen('which chromedriver')
+    return stream.read().strip()

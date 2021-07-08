@@ -5,4 +5,4 @@
 >pip install pytest  
 
 for running all test on package
-> pytest --pyargs Tests
+> python -m pytest --pyargs Tests
